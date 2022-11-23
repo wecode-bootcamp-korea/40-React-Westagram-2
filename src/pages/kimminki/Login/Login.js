@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MinKi = () => {
-  return <div>ssLogin</div>;
+const LoginMinKi = () => {
+  return <div>김민기 로그인 창</div>;
 };
 
-export default MinKi;
+export default LoginMinKi;

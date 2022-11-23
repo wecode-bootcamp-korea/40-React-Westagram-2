@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ChangHoon1 = () => {
-  return <div>ssLogin</div>;
+const MainChangHoon = () => {
+  return <div>신창훈 메인 창</div>;
 };
 
-export default ChangHoon1;
+export default MainChangHoon;

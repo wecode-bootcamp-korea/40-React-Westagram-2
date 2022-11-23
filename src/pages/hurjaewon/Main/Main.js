@@ -1,7 +1,7 @@
 import React from 'react';
 
-const JaeWon1 = () => {
-  return <div>ssLogin</div>;
+const MainJaeWon = () => {
+  return <div>허재원 메인 창</div>;
 };
 
-export default JaeWon1;
+export default MainJaeWon;

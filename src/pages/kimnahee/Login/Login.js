@@ -1,7 +1,7 @@
 import React from 'react';
 
-const NaHee = () => {
-  return <div>ssLogin</div>;
+const LoginNaHee = () => {
+  return <div>김나희 로그인 창</div>;
 };
 
-export default NaHee;
+export default LoginNaHee;
