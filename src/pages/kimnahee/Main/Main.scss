@@ -1,0 +1,326 @@
+@import '../Login/Login.scss';
+$MainPrimary-border: 2px solid #efefef;
+
+.nav {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  background-color: #ffffff;
+
+  .instaIcon {
+    width: 50px;
+    border-right: 1px solid gray;
+    margin: 20px 20px 20px 30px;
+    padding-top: 5px;
+  }
+  .instaLogo {
+    font-family: $primary-font;
+    font-size: 35px;
+    margin-top: 15px;
+  }
+  .navBox {
+    @include flexSort(space-between);
+    flex-direction: row;
+    margin: 0 100px;
+    align-items: center;
+  }
+  .logoIcon {
+    display: flex;
+  }
+
+  .search {
+    width: 250px;
+    height: 30px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    margin: 0;
+  }
+
+  .search::-webkit-input-placeholder {
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+    background-size: contain;
+    background-position: 35% center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-indent: 0;
+  }
+
+  .navButtonBox {
+    @include flexSort(space-around);
+    width: 150px;
+
+    button {
+      border-style: none;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .searchBox {
+    width: 250px;
+
+    div {
+      width: 210px;
+      height: 0;
+    }
+  }
+}
+
+.main {
+  @include flexSort(center);
+  width: 100%;
+  height: 110vh;
+  background-color: rgb(240, 240, 240);
+}
+
+button {
+  border: none;
+  background-color: white;
+}
+
+.feed {
+  width: 650px;
+  height: auto;
+  @include flexSort(center);
+
+  article {
+    height: fit-content;
+    border: $MainPrimary-border;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-color: white;
+  }
+  .profile {
+    @include flexSort(space-between);
+    flex-direction: row;
+    margin: 10px;
+
+    .feedUserInfo {
+      @include flexalign;
+
+      .feedUserImage {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #e2e3e7;
+        border-radius: 50%;
+      }
+
+      .feedUserName {
+        margin: 15px 20px;
+        width: 450px;
+        font-weight: bold;
+      }
+    }
+    .overflowImg {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-color: white;
+    }
+  }
+
+  .feedImg {
+    width: 600px;
+    height: 500px;
+  }
+
+  .feedLine {
+    @include flexSort(space-between);
+    align-items: center;
+    width: 600px;
+    height: 25px;
+    padding: 20px 0;
+
+    .feedButtonBox {
+      margin: 10px;
+    }
+
+    .feedButton {
+      padding: 3px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .bookMark {
+    width: 32px;
+    height: 25px;
+    margin-right: 10px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .likeNumber {
+    @include flexalign;
+    width: auto;
+    height: 20px;
+    margin: 0 15px 10px 10px;
+
+    img {
+      width: 19px;
+      height: 19px;
+      border: 1px solid #abacb0;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+  }
+
+  ul {
+    padding-left: 5px;
+
+    li {
+      list-style: none;
+      @include flexalign;
+    }
+  }
+
+  .time {
+    height: 20px;
+    margin: 2px 10px;
+    color: #abacb0;
+  }
+
+  .upload {
+    border-style: none;
+    width: 50px;
+    font-size: 20px;
+    color: rgb(104, 162, 238);
+    background-color: #ffffff;
+    margin-left: 15px;
+  }
+}
+.main-right {
+  width: 300px;
+  height: fit-content;
+  margin-top: 50px;
+  margin-left: 20px;
+
+  .profileBox {
+    @include flexalign;
+    width: 300px;
+    height: 50px;
+    margin: 10px 5px;
+
+    .profileImage {
+      width: 45px;
+    }
+    .profileUserName {
+      font-weight: normal;
+      color: gray;
+      font-size: 15px;
+    }
+  }
+
+  .storyBox {
+    width: 300px;
+    height: 230px;
+    border: $MainPrimary-border;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .storyListBox {
+    width: 100%;
+    height: 184px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .storyList {
+      @include flexalign;
+      margin: 10px;
+
+      .storyUserImage {
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 0;
+      }
+
+      .storyImage {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        background-image: linear-gradient(#fff, #fff),
+          linear-gradient(to right, orange 0%, rgb(236, 43, 149) 100%);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+      }
+    }
+  }
+  .suggestion {
+    width: 100%;
+    border: $MainPrimary-border;
+    border-radius: 5px;
+    margin-top: 25px;
+    background-color: white;
+  }
+
+  .storyHead,
+  .suggestionHead {
+    @include flexSort(space-between);
+    margin: 13px;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    div {
+      color: #abacb0;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+  .userId {
+    font-weight: bold;
+    margin: 0 10px;
+    width: 150px;
+
+    .userTime,
+    .userInformation {
+      font-weight: normal;
+      color: gray;
+      font-size: 15px;
+    }
+  }
+  .pickList {
+    @include flexSort(space-between);
+    flex-direction: row;
+    margin: 10px 10px;
+
+    div > img {
+      width: 40px;
+      height: 40px;
+      border: $MainPrimary-border;
+      border-radius: 50%;
+    }
+
+    button {
+      color: #0095f6;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+
+  .information {
+    padding: 10px 0 5px 0px;
+    color: #abacb0;
+    font-size: 15px;
+  }
+}
+@media (max-width: 900px) {
+  .main-right,
+  .searchBox {
+    display: none;
+  }
+}
