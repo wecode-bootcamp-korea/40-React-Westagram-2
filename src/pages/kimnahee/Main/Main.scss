@@ -181,6 +181,28 @@ button {
     }
   }
 
+  .commentBox {
+    width: 100%;
+    border-top: $MainPrimary-border;
+
+    .comment {
+      width: 88%;
+      height: 50px;
+      font-size: 20px;
+      padding: 10px 15px;
+      border: none;
+    }
+  }
+
+  .commentElement {
+    margin: 7px 10px;
+
+    .commentUserName {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+
   .time {
     height: 20px;
     margin: 2px 10px;
@@ -249,7 +271,7 @@ button {
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        border: 3px solid transparent;
+        border: 2.5px solid transparent;
         background-image: linear-gradient(#fff, #fff),
           linear-gradient(to right, orange 0%, rgb(236, 43, 149) 100%);
         background-origin: border-box;

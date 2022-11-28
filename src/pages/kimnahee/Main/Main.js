@@ -1,5 +1,5 @@
-import React from 'react';
 import './Main.scss';
+import React, { useState } from 'react';
 
 const Nav = () => {
   return (
@@ -43,6 +43,34 @@ const Nav = () => {
 };
 
 const Feed = () => {
+  const [comment, setComment] = useState([
+    { id: 1, userName: 'kikiki.m', content: '안녕하세요' },
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [keyId, setKeyId] = useState(2);
+
+  const saveInputValue = e => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
+
+  const addComment = e => {
+    e.preventDefault();
+    const commentList = {
+      id: keyId,
+      userName: 'dlatldyd_dlatl',
+      content: inputValue,
+    };
+    const newComment = comment.concat(commentList);
+    setKeyId(keyId + 1);
+    setComment(newComment);
+  };
+  const createComment = comment.map(commentArray => (
+    <li className="commentElement" key={commentArray.id}>
+      <span className="commentUserName">{commentArray.userName}</span>
+      <span className="userComment">{commentArray.content}</span>
+    </li>
+  ));
   return (
     <div className="feed">
       <article>
@@ -111,6 +139,21 @@ const Feed = () => {
               좋아합니다.
             </span>
           </div>
+          <form onSubmit={addComment}>
+            <ul id="commentList">{createComment}</ul>
+            <div className="time">1일 전</div>
+            <div className="commentBox">
+              <p>
+                <input
+                  className="comment"
+                  type="text"
+                  placeholder="댓글 달기..."
+                  onChange={saveInputValue}
+                />
+                <input className="upload" type="submit" value="게시" />
+              </p>
+            </div>
+          </form>
         </div>
       </article>
     </div>
