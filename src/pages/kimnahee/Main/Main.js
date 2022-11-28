@@ -44,7 +44,7 @@ const Nav = () => {
 
 const Comment = ({ commentArray }) => {
   return (
-    <li key={commentArray.id} className="commentElement">
+    <li className="commentElement">
       <span className="commentUserName">{commentArray.userName}</span>
       <span className="userComment">{commentArray.userContent}</span>
     </li>
