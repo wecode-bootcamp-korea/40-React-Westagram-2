@@ -14,12 +14,16 @@ const MainPage = () => {
     setCommentList(commentList.concat(comment));
     setComment('');
   };
-
+  const deleteComment = i => {
+    setCommentList(commentList.filter((_, idx) => idx !== i));
+  };
   const commentArea = commentList.map((element, i) => (
     <span key={i}>
       <li>{element}</li>
+      <button onClick={() => deleteComment(i)}>x</button>
     </span>
   ));
+  console.log(commentList);
   return (
     <div className="main-display">
       <nav className="navi">
