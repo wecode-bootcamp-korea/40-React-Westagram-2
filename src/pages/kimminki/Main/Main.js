@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import '../Main/Main.scss';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Feeds from './Feeds';
+import '../Main/Main.scss';
+
 const MainPage = () => {
   const [userInfo, setUserInfo] = useState([]);
   const [feeds, setFeeds] = useState([]);

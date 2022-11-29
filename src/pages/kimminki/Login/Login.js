@@ -1,34 +1,38 @@
 import React, { useState } from 'react';
-import '../Login/Login.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import '../Login/Login.scss';
 
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [pass, setPassword] = useState('');
-  const [color, setColor] = useState('blue');
+  const [color, setColor] = useState('rgba(0, 0, 255, 0.5)');
   const [button, setButton] = useState(true);
 
   const saveUserId = event => {
     setId(event.target.value);
-    checkLogin();
+    buttonDisabled();
+    buttonColor();
   };
   const savePassword = event => {
     setPassword(event.target.value);
-    checkLogin();
-  };
-
-  const checkLogin = () => {
-    if (id.includes('@') && pass.length > 5) {
-      setColor('skyblue');
-      setButton(false);
-    }
+    buttonDisabled();
+    buttonColor();
   };
 
   const Navigate = useNavigate();
 
+  const buttonDisabled = () => {
+    id.includes('@') && pass.length > 5 ? setButton(false) : setButton(true);
+  };
+
+  const buttonColor = () => {
+    id.includes('@') && pass.length > 5
+      ? setColor('skyblue')
+      : setColor('rgba(0, 0, 255, 0.5)');
+  };
   const goToMain = () => {
-    Navigate('/main');
+    Navigate('/mainminki');
   };
   return (
     <div className="login-display">
@@ -51,13 +55,11 @@ const LoginPage = () => {
           />
           <button
             style={{ backgroundColor: color }}
-            className="check"
             onClick={goToMain}
             disabled={button}
           >
             로그인
           </button>
-          {/* disabled */}
           <Link to="/main">main페이지로 이동</Link>
           <a href="#" className="forget">
             비밀번호를 잊으셨나요?
