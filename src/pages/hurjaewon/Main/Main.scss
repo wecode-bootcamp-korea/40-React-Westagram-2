@@ -22,18 +22,11 @@
   }
 
   .searchBox {
-    width: 300px;
-    // padding: 10px 10px;
-    // padding-top: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fafafa;
     background-repeat: no-repeat;
-    // background-image: url(./img/finder.png);
     background-position: 13px center;
     background-size: contain;
-    // text-align: center;
-    // text-indent: 30px;
 
     &:focus {
       width: 50%;
@@ -108,11 +101,6 @@ main {
           margin-right: 20px;
         }
       }
-
-      // .article2 {
-      //   .articleMainImg {
-      //   }
-      // }
 
       .article3 {
         .article31 {
@@ -364,32 +352,3 @@ main {
     }
   }
 }
-
-// .accountMainId1 {
-//   // display: flex;
-//   // justify-content: center;
-//   // align-items: center;
-//   // position: absolute;
-//   top: 50px;
-//   right: 190px;
-
-// }
-
-// .accountMainId {
-//   margin-left: 70px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-start;
-//   flex-direction:column;
-// }
-
-// .textMore {
-//   font-size: 18px;
-//   margin-left: 7px;
-//   font-weight: 400;
-//   color: gray;
-// }
-
-// .smallLineheart {
-//   justify-content: flex-end;
-// }

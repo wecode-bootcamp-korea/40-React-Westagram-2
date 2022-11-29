@@ -34,11 +34,10 @@ function Main() {
               src={westagramSmallLogo}
               alt="westgram small logo"
             />
-            {/* <div className="gnbLine"></div> */}
           </div>
           <div className="searchBox">
             <input
-              id="searchBox"
+              id="inputSearchBox"
               name="search"
               type="text"
               placeholder="검색"
@@ -64,7 +63,6 @@ function Main() {
         </nav>
         <main>
           <div className="feeds">
-            {/* <div className="feedsContainer"></div> */}
             <article>
               <div className="article1">
                 <div className="article1Left">
@@ -118,8 +116,6 @@ function Main() {
                     </span>
                   </div>
                   <span className="delete">x</span>
-                  {/* <!-- <span class="text_more">더보기</span> -->
-                  <!-- <div class="small_lineheart"><img src="img/small_lineheart.png" alt="small lineheart"></div> --> */}
                 </div>
                 <div className="article4">
                   <span className="time">42분 전</span>
@@ -193,26 +189,4 @@ function Main() {
   );
 }
 
-// state 예시
-// import React, { useState } from "react";
-
-// const Main = () => {
-//   const [color, setColor] = useState("red");
-
-//   return (
-//     <>
-//       <h1 style={{ backgroundColor: color }}> 여기는 메인페이지입니다 </h1>
-//       <button onClick={() => setColor("#ffff")}> 배경색 변경 </button>
-//     </>
-//   );
-// };
-
 export default Main;
-
-// import React from 'react';
-
-// function MainJaeWon() {
-//   return <img src="../../../assets/hurjaewon/westagramNavIcon.png"> </img>;
-// }
-
-// export default MainJaeWon;
