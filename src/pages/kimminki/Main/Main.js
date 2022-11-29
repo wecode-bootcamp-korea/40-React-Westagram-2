@@ -1,35 +1,22 @@
 import React, { useEffect } from 'react';
 import '../Main/Main.scss';
 import { useState } from 'react';
-import CommentArea from './comment';
+import Feeds from './Feeds';
 const MainPage = () => {
-  const [comment, setComment] = useState([]);
-  const [commentList, setCommentList] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
+  const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
     fetch('/data/userInfo.json')
       .then(respons => respons.json())
       .then(result => setUserInfo(result));
   }, []);
-  console.log(userInfo);
-  const commentValue = event => {
-    setComment(event.target.value);
-  };
+  useEffect(() => {
+    fetch('/data/feeds.json')
+      .then(respons => respons.json())
+      .then(result => setFeeds(result));
+  }, []);
 
-  const addComment = () => {
-    setCommentList(commentList.concat(comment));
-    setComment('');
-  };
-  const deleteComment = i => {
-    setCommentList(commentList.filter((_, index) => index !== i));
-  };
-  const commentArea = commentList.map((element, i) => (
-    <span key={i}>
-      <li>{element}</li>
-      <button onClick={() => deleteComment(i)}>x</button>
-    </span>
-  ));
   return (
     <div className="main-display">
       <nav className="navi">
@@ -49,37 +36,10 @@ const MainPage = () => {
       </nav>
 
       <main>
-        <div className="feeds">
-          <div className="profile">
-            <img className="user-img" />
-            <div className="user-name"> min__ki</div>
-            <i className="fa-solid fa-bars bar" />
-          </div>
-          <article className="main-page" />
-          <div className="content-bar">
-            <i className="fa-regular fa-heart fa-2x like" />
-            <i className="fa-regular fa-comment fa-2x spech" />
-            <i className="fa-solid fa-arrow-up-from-bracket fa-2x arrow" />
-          </div>
-          <div className="likey">
-            <img className="people" />
-            <div className="like-people"> ooo님외 o명이 좋아합니다.</div>
-          </div>
-          <ul className="comment-area">
-            <CommentArea comment={commentArea} />
-          </ul>
-          <div className="comment-Input">
-            <input
-              className="comment-text"
-              type="text"
-              placeholder="댓글달기..."
-              value={comment}
-              onChange={commentValue}
-            />
-            <button className="registration" onClick={addComment}>
-              게시
-            </button>
-          </div>
+        <div className="feedss">
+          {feeds.map(element => {
+            return <Feeds element={element} />;
+          })}
         </div>
         <div className="main-right">
           <div className="right-1">
