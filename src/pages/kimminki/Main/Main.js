@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Main/Main.scss';
 import { useState } from 'react';
 import CommentArea from './comment';
 const MainPage = () => {
   const [comment, setComment] = useState([]);
   const [commentList, setCommentList] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
 
+  useEffect(() => {
+    fetch('/data/userInfo.json')
+      .then(respons => respons.json())
+      .then(result => setUserInfo(result));
+  }, []);
+  console.log(userInfo);
   const commentValue = event => {
     setComment(event.target.value);
   };
@@ -23,7 +30,6 @@ const MainPage = () => {
       <button onClick={() => deleteComment(i)}>x</button>
     </span>
   ));
-  console.log(commentList);
   return (
     <div className="main-display">
       <nav className="navi">
@@ -86,55 +92,31 @@ const MainPage = () => {
               <div className="story right-font2">스토리</div>
               <div className="all">모두보기</div>
             </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-            </div>
+            {userInfo.map(element => {
+              return (
+                <div className="boundary" key={element.id}>
+                  <img className="profile2" />
+                  <div className="right-font1">{element.username}</div>
+                  <div className="right-font2">1 분전</div>
+                </div>
+              );
+            })}
           </div>
           <div className="right-3">
             <div className="right-op">
               <div className="story right-font2">회원님을 위한 추천</div>
               <div className="all">모두 보기</div>
             </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-              <div className="follow">팔로우</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-              <div className="follow">팔로우</div>
-            </div>
-            <div className="boundary">
-              <img className="profile2" />
-              <div className="right-font1">abcdefg</div>
-              <div className="right-font2">1 분전</div>
-              <div className="follow">팔로우</div>
-            </div>
+            {userInfo.map(element => {
+              return (
+                <div className="boundary" key={element.id}>
+                  <img className="profile2" />
+                  <div className="right-font1">{element.username}</div>
+                  <div className="right-font2">1 분전</div>
+                  <div className="follow">팔로우</div>
+                </div>
+              );
+            })}
           </div>
           <div className="info">
             {FOOTER.map(element => {
