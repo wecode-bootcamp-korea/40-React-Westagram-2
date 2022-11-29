@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
 
 function Main() {
+  let [userName] = useState('username');
+  let [comment, setComment] = useState('');
+  let [feedComments, setFeedComments] = useState([]);
+  let [isValid, setIsValid] = useState(false);
+
+  let post = e => {
+    const copyFeedComments = [...feedComments];
+    copyFeedComments.push(comment);
+    setFeedComments(copyFeedComments);
+    setComment('');
+  };
+
+  const CommentList = props => {
+    return (
+      <div className="userCommentBox">
+        <p className="userName" class="bold">
+          {props.userName}
+        </p>
+        <div className="userComment">{props.userComment}</div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div class="header">
-        <img class="instagram" src=".\images\shinchanghoon\instagram.png" />
+        <img
+          className="instagram"
+          alt="instagramImage"
+          src="./images/shinchanghoon/instagram.png"
+        />
         <img class="westagram" src=".\images\shinchanghoon\westagram.png" />
         <div class="input-wrapper">
           <input type="text" aria-label="검색창" />
@@ -71,13 +98,44 @@ function Main() {
 
               <p class="normal">어디 바닷가에서 찍었냐?</p>
             </div>
-            {/* <!--댓글기능 추가로 손봐야됨--> */}
-            <div id="form-commentInfo">
-              <div id="comment-count">
-                댓글 <span id="count">1</span>
-              </div>
-              <input id="comment-input" placeholder="댓글을 입력해 주세요." />
-              <button id="submit">등록</button>
+            {/* <!--댓글기능 구현 추가된댓글창 수정해야함--> */}
+
+            <div className="addcomment">
+              {feedComments.map((commentArr, i) => {
+                return (
+                  <CommentList
+                    userName={userName}
+                    userComment={commentArr}
+                    key={i}
+                  />
+                );
+              })}
+              <input
+                type="text"
+                className="inputComment"
+                placeholder="댓글 달기..."
+                onChange={e => {
+                  setComment(e.target.value);
+                }}
+                onKeyUp={e => {
+                  e.target.value.length > 0
+                    ? setIsValid(true)
+                    : setIsValid(false);
+                }}
+                value={comment}
+              />
+              <button
+                type="button"
+                className={
+                  comment.length > 0
+                    ? 'submitCommentActive'
+                    : 'submitCommentInactive'
+                }
+                onClick={post}
+                disabled={isValid ? false : true}
+              >
+                게시
+              </button>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ function Login() {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    if (idValue.includes('@') && pwValue.length >= 5) {
+    if (idValue.length >= 1 && pwValue.length >= 1) {
       navigate('/mainchanghoon');
     } else {
       alert('가입된 회원이 아닙니다. 회원가입을 먼저 해주세요.');
@@ -21,7 +21,7 @@ function Login() {
   let [pwValue, setPwInput] = useState('');
 
   const ActiveIsPassedLogin = () => {
-    return idValue.includes('@') && pwValue.length >= 5
+    return idValue.length >= 1 && pwValue.length >= 1
       ? setActive(true)
       : setActive(false);
   };
