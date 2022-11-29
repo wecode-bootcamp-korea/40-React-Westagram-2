@@ -1,0 +1,84 @@
+.wrap {
+  padding-top: 20px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #fafafa;
+  }
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 730px;
+  height: 790px;
+  padding: 10px 40px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffff;
+}
+
+.loginLogo {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.inputBox {
+  padding-top: 10px;
+  text-align: center;
+}
+
+// input[type='text']
+#textBox {
+  width: 534px;
+  height: 50px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fafafa;
+
+  &::placeholder {
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+}
+
+// input[type='password']
+#passwordBox {
+  width: 534px;
+  height: 50px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fafafa;
+
+  &::placeholder {
+    margin-left: 10px;
+    font-size: 1.2em;
+  }
+}
+
+button {
+  display: block;
+  width: 550px;
+  height: 40px;
+  margin: 30px auto;
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+  background-color: #abd7ff;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #c5e1fa;
+}
+
+.forgetPassword {
+  margin-top: 270px;
+  color: #043667;
+  font-size: 20px;
+  text-align: center;
+}
