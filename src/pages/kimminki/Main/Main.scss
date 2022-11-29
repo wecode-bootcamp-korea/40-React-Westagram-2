@@ -343,11 +343,13 @@
         }
       }
       .info {
+        display: flex;
         position: relative;
         top: -25px;
         left: 10px;
+        flex-wrap: wrap;
         width: 300px;
-        color: rgba(226, 226, 226, 5);
+        color: rgb(226, 226, 226);
         font-size: 13px;
         font-weight: bold;
       }

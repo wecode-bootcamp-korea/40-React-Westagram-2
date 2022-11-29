@@ -15,7 +15,7 @@ const MainPage = () => {
     setComment('');
   };
   const deleteComment = i => {
-    setCommentList(commentList.filter((_, idx) => idx !== i));
+    setCommentList(commentList.filter((_, index) => index !== i));
   };
   const commentArea = commentList.map((element, i) => (
     <span key={i}>
@@ -137,15 +137,9 @@ const MainPage = () => {
             </div>
           </div>
           <div className="info">
-            <p>
-              instagram정보 지원 홍보 센터 API <br />
-              채용 정보 개인정보처리방침 약관
-              <br />
-              디렉터리 프로필 해시태그 언어
-              <br />
-              <br />
-              <br />@ 2019 INSTAGRAM
-            </p>
+            {FOOTER.map(element => {
+              return <span key={element.id}>{element.name}&nbsp; &nbsp; </span>;
+            })}
           </div>
         </div>
       </main>
@@ -154,3 +148,17 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+const FOOTER = [
+  { id: 1, name: '소개' },
+  { id: 2, name: '도움말' },
+  { id: 3, name: '홍보 센터' },
+  { id: 4, name: 'API' },
+  { id: 5, name: '채용정보' },
+  { id: 6, name: '개인정보처리방침' },
+  { id: 7, name: '약관' },
+  { id: 8, name: '위치' },
+  { id: 9, name: '인기 계정' },
+  { id: 10, name: '해시태그' },
+  { id: 11, name: '언어' },
+];
