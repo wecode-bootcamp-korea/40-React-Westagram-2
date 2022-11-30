@@ -203,6 +203,16 @@ button {
       font-weight: bold;
       margin-right: 10px;
     }
+    .deleteButton {
+      border-style: none;
+      background-color: #ffffff;
+      margin-left: auto;
+    }
+    .likeButton {
+      border-style: none;
+      background-color: #ffffff;
+      margin-left: auto;
+    }
   }
 
   .time {
@@ -340,9 +350,18 @@ button {
     padding: 10px 0 5px 0px;
     color: #abacb0;
     font-size: 15px;
+
+    li {
+      display: inline;
+
+      &:not(:first-child)::before {
+        content: '•';
+      }
+    }
   }
 }
-@media (max-width: 900px) {
+
+@media• (max-width: 900px) {
   .main-right,
   .searchBox {
     display: none;

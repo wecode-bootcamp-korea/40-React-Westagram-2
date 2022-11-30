@@ -1,5 +1,7 @@
-import './Main.scss';
 import React, { useState } from 'react';
+import Comment from './CommentList';
+import Footer from './Footer';
+import './Main.scss';
 
 const Nav = () => {
   return (
@@ -42,16 +44,7 @@ const Nav = () => {
   );
 };
 
-const Comment = ({ commentArray }) => {
-  return (
-    <li className="commentElement">
-      <span className="commentUserName">{commentArray.userName}</span>
-      <span className="userComment">{commentArray.userContent}</span>
-    </li>
-  );
-};
-
-const CommentList = () => {
+const Feed = () => {
   const [comment, setComment] = useState([
     { id: 1, userName: 'kikiki.m', userContent: '안녕하세요' },
   ]);
@@ -72,27 +65,17 @@ const CommentList = () => {
     setKeyId(keyId + 1);
     setComment(newComment);
   };
-  const createComment = comment.map(commentArray => (
-    <Comment key={commentArray.id} commentArray={commentArray} />
-  ));
-  return (
-    <form onSubmit={addComment}>
-      <ul id="commentList">{createComment}</ul>
-      <div className="time">1일 전</div>
-      <div className="commentBox">
-        <input
-          type="text"
-          className="comment"
-          placeholder="댓글 달기..."
-          onChange={saveInputValue}
-        />
-        <input type="submit" className="upload" value="게시" />
-      </div>
-    </form>
-  );
-};
+  const removeComment = id => {
+    setComment(comment.filter(array => array.id !== id));
+  };
 
-const Feed = () => {
+  const createComment = comment.map(commentArray => (
+    <Comment
+      key={commentArray.id}
+      commentArray={commentArray}
+      removeComment={removeComment}
+    />
+  ));
   return (
     <div className="feed">
       <article>
@@ -161,7 +144,19 @@ const Feed = () => {
               좋아합니다.
             </span>
           </div>
-          <CommentList />
+          <form onSubmit={addComment}>
+            <ul id="commentList">{createComment}</ul>
+            <div className="time">1일 전</div>
+            <div className="commentBox">
+              <input
+                type="text"
+                className="comment"
+                placeholder="댓글 달기..."
+                onChange={saveInputValue}
+              />
+              <input type="submit" className="upload" value="게시" />
+            </div>
+          </form>
         </div>
       </article>
     </div>
@@ -307,13 +302,7 @@ const StoryBox = () => {
           <button>팔로우</button>
         </div>
       </div>
-      <div className="information">
-        Instagram 정보 ∙ 지원 ∙ 홍보 센터 ∙ API ∙<br />
-        채용정보 ∙ 개인정보처리방침 ∙ 약관 ∙<br />
-        디렉토리 ∙ 프로필 ∙ 해시태그 ∙ 언어
-        <br />
-        <br />© 2019 INSTARGRAM
-      </div>
+      <Footer />
     </div>
   );
 };

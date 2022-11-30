@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
-import { Navigate, useNavigate } from 'react-router-dom';
 
 const LoginNaHee = () => {
   const navigate = useNavigate();
@@ -9,7 +9,6 @@ const LoginNaHee = () => {
   const [pwdValue, setPwdValue] = useState('');
 
   const [active, setActive] = useState(true);
-  const [className, setClassName] = useState('loginBtn');
 
   const saveUserId = e => {
     setIdValue(e.target.value);
@@ -17,15 +16,11 @@ const LoginNaHee = () => {
   const saveUserPwd = e => {
     setPwdValue(e.target.value);
   };
-  const setAll = (act, Name) => {
-    setActive(act);
-    setClassName(Name);
-  };
 
   const valid = () => {
     return idValue.includes('@') && pwdValue.length >= 5
-      ? setAll(false, 'loginBtnActive')
-      : setAll(true, 'loginBtn');
+      ? setActive(false)
+      : setActive(true);
   };
 
   const goToMain = () => {
@@ -49,7 +44,11 @@ const LoginNaHee = () => {
         onKeyUp={valid}
         onChange={saveUserPwd}
       />
-      <button className={className} disabled={active} onClick={goToMain}>
+      <button
+        className={active ? 'loginBtn' : 'loginBtnActive'}
+        disabled={active}
+        onClick={goToMain}
+      >
         로그인
       </button>
       <div className="forgetPassword">
