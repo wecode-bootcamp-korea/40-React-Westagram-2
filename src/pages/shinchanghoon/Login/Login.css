@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  width: auto;
+  margin-top: 70px;
+  padding: auto;
+  text-align: center;
+}
+
+.idInputForm {
+  width: 80%;
+  height: 30px;
+
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.pwInputForm {
+  width: 80%;
+  height: 30px;
+
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.activeLoginBtn {
+  width: 80%;
+  height: 30px;
+  background-color: #0030c2;
+  color: rgb(154, 149, 234);
+  font-size: 14px;
+  text-align: center;
+}
+
+.loginBtn {
+  width: 80%;
+  height: 30px;
+  background-color: #5547f7;
+  color: rgb(154, 149, 234);
+  font-size: 14px;
+  text-align: center;
+}
+
+.pwComment {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.layout {
+  top: 50%;
+  width: 380px;
+  margin: auto;
+  margin-top: 90px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border: 1px solid rgba(78, 76, 76, 0.39);
+  text-align: center;
+  align: center;
+}

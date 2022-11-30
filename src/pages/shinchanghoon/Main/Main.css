@@ -1,0 +1,217 @@
+.header {
+  display: flex;
+  height: 40px;
+  background-color: aliceblue;
+}
+
+.main {
+  display: flex;
+  padding-top: 30px;
+
+  background-color: #a3a1a1;
+}
+
+.center {
+  width: 700px;
+  margin-left: 70px;
+
+  border: 1px black;
+  background-color: rgb(255, 255, 255);
+}
+
+.article {
+  margin-top: 30px;
+
+  margin-left: 10px;
+
+  border: 1px black;
+  background-color: rgb(252, 252, 252);
+}
+
+.right {
+  width: 360px;
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 40px;
+  background-color: #a3a1a1;
+}
+
+.like {
+  margin-top: 10px;
+}
+.commnet {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.instagram {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.explore {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.heart {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.westagram {
+  height: 50px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.input-wrapper {
+  margin: auto;
+  padding: 6px;
+}
+
+.circle_photo {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 70%;
+}
+
+.center_photo {
+  width: 680px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  object-fit: fill;
+}
+
+.profilephoto {
+  display: flex;
+}
+
+.profilephoto2 {
+  display: flex;
+  float: right;
+}
+
+.nameandprofile {
+  margin-left: 30px;
+  padding: 6px;
+}
+
+.nameandprofile2 {
+  margin-left: 30px;
+  padding: 6px;
+  float: right;
+}
+
+.centerarticle {
+  object-fit: cover;
+}
+
+.small_icon {
+  width: 30px;
+  height: 30px;
+}
+
+.flight {
+  margin-right: 30px;
+  float: right;
+}
+
+.heart2 {
+  margin-left: 30px;
+}
+
+.bold {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.normal {
+  margin-left: 30px;
+}
+
+.like {
+  display: flex;
+  margin-left: 10px;
+}
+
+.addcomment {
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
+.inputComment {
+  width: 580px;
+  height: 30px;
+}
+
+.userCommentBox {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.userComment {
+  margin-left: 30px;
+}
+
+.commnet {
+  margin-left: 10px;
+}
+
+.circleIamge {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 70%;
+}
+
+.rightbox1 {
+  display: flex;
+}
+
+.articlebox1 {
+  display: flex;
+}
+
+.rightbox2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.story {
+  margin-bottom: 10px;
+}
+
+.follower {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rightbox3 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  background-color: white;
+}
