@@ -17,8 +17,21 @@ import accountRight from '../../../assets/hurjaewon/right_top_account.png';
 import account1 from '../../../assets/hurjaewon/small_account.png';
 import account2 from '../../../assets/hurjaewon/small_account.png';
 import account3 from '../../../assets/hurjaewon/small_account.png';
+import { useState } from 'react';
 
 function Main() {
+  const [comment, setComment] = useState('');
+  const saveComment = event => {
+    setComment(event.target.value);
+    console.log('comment', comment);
+  };
+  const [arrayComment, setArrayComment] = useState([]);
+
+  const submitBox = !(comment.length > 0);
+
+  const addComment = () => {
+    comment;
+  };
   return (
     <div className="Main">
       <div class="wrap">
@@ -126,8 +139,11 @@ function Main() {
                   id="commentInput"
                   type="text"
                   placeholder="댓글 달기..."
+                  value={comment}
+                  onChange={saveComment}
                 />
-                <buttotn id="submit">게시</buttotn>
+                {/* id="submit" */}
+                <buttotn disabled={submitBox}>게시</buttotn>
               </div>
             </article>
           </div>

@@ -22,7 +22,6 @@ function Login() {
   };
 
   const buttonBox = !(id.includes('@') && pw.length > 4);
-
   // // {/* 로그인 버튼 활성화 기능 구현 */}
   // const [pw, setPW] = useState('');
   // const [id, setId] = useState('');
