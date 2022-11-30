@@ -20,6 +20,9 @@ function Login() {
     setPw(event.target.value);
     console.log('pw', pw);
   };
+
+  const buttonBox = !(id.includes('@') && pw.length > 4);
+
   // // {/* 로그인 버튼 활성화 기능 구현 */}
   // const [pw, setPW] = useState('');
   // const [id, setId] = useState('');
@@ -48,6 +51,7 @@ function Login() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={saveUserId}
+              // onKeyUp={idChangeColor}
             />
           </div>
           <div className="inputBox">
@@ -57,6 +61,7 @@ function Login() {
               type="password"
               placeholder="비밀번호"
               onChange={saveUserPw}
+              // onKeyUp={pwChangeColor}
             />
           </div>
           {/* 로그인 버튼 활성화 기능 구현 */}
@@ -83,10 +88,7 @@ function Login() {
               <button className="buttonBox" onKeyUp={changeColor}>로그인</button>
             </Link> */}
           {/* useNavigate hook 기능 구현 */}
-          <button
-            // disabled={buttonBox}
-            onClick={main}
-          >
+          <button disabled={buttonBox} onClick={main}>
             로그인
           </button>
           <div className="forgetPassword">비밀번호를 잊으셨나요?</div>
