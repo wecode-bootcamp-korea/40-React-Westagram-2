@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Comment from './CommentList';
+import FeedLists from './Feed';
 import Footer from './Footer';
 import './Main.scss';
 
@@ -40,125 +41,6 @@ const Nav = () => {
           </button>
         </div>
       </div>
-    </div>
-  );
-};
-
-const Feed = () => {
-  const [comment, setComment] = useState([
-    { id: 1, userName: 'kikiki.m', userContent: '안녕하세요' },
-  ]);
-  const [inputValue, setInputValue] = useState('');
-  const [keyId, setKeyId] = useState(2);
-
-  const saveInputValue = e => {
-    e.preventDefault();
-    setInputValue(e.target.value);
-  };
-
-  const addComment = e => {
-    e.preventDefault();
-    const commentElement = [
-      { id: keyId, userName: 'dlatldyd_dlatl', userContent: inputValue },
-    ];
-    const newComment = comment.concat(commentElement);
-    setKeyId(keyId + 1);
-    setComment(newComment);
-  };
-  const removeComment = id => {
-    setComment(comment.filter(array => array.id !== id));
-  };
-
-  const createComment = comment.map(commentArray => (
-    <Comment
-      key={commentArray.id}
-      commentArray={commentArray}
-      removeComment={removeComment}
-    />
-  ));
-  return (
-    <div className="feed">
-      <article>
-        <div className="profile">
-          <div className="feedUserInfo">
-            <div>
-              <img
-                className="feedUserImage"
-                alt="feedUserImage"
-                src="/images/MainPage/myprofile.png"
-              />
-            </div>
-            <div className="feedUserName">heehee.hee</div>
-          </div>
-          <button className="overflow">
-            <img
-              alt="more"
-              className="overflowImg"
-              src="/images/MainPage/more.png"
-            />
-          </button>
-        </div>
-        <div className="feedImgBox">
-          <img
-            className="feedImg"
-            alt="feed사진"
-            src="https://images.unsplash.com/photo-1668613962618-b389448296c9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=928&amp;q=80"
-          />
-        </div>
-        <div className="feedLine">
-          <div className="feedButtonBox">
-            <button className="feedButton">
-              <img alt="like" src="/images/MainPage/like.png" />
-            </button>
-            <button className="feedButton">
-              <img
-                alt="chat"
-                src="/images/MainPage/chat.png"
-                style={{ opacity: 0.7 }}
-              />
-            </button>
-            <button className="feedButton">
-              <img
-                alt="upload"
-                src="/images/MainPage/upload.png"
-                style={{ opacity: 0.6 }}
-              />
-            </button>
-          </div>
-          <div>
-            <button className="bookMark">
-              <img alt="'bookmark" src="/images/MainPage/bookmark.png" />
-            </button>
-          </div>
-        </div>
-        <div className="commentArea">
-          <div className="likeNumber">
-            <img
-              className="likeFeedUser"
-              alt="user image"
-              src="https://plus.unsplash.com/premium_photo-1666788168130-959f109c07fc?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=822&amp;q=80"
-            />
-            <span>
-              <span style={{ fontWeight: 'bold' }}>algkjaweglkja</span>님
-              <span style={{ fontWeight: 'bold' }}>외 10명이</span>
-              좋아합니다.
-            </span>
-          </div>
-          <form onSubmit={addComment}>
-            <ul id="commentList">{createComment}</ul>
-            <div className="time">1일 전</div>
-            <div className="commentBox">
-              <input
-                type="text"
-                className="comment"
-                placeholder="댓글 달기..."
-                onChange={saveInputValue}
-              />
-              <input type="submit" className="upload" value="게시" />
-            </div>
-          </form>
-        </div>
-      </article>
     </div>
   );
 };
@@ -312,7 +194,7 @@ const MainNaHee = () => {
     <>
       <Nav />
       <div className="main">
-        <Feed />
+        <FeedLists />
         <StoryBox />
       </div>
     </>
