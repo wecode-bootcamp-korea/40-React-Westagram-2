@@ -49,16 +49,18 @@ function Main() {
         <div class="center">
           {/* <!--사진좋아요넣을부분--> */}
           <div class="article">
-            <div class="profilephoto">
-              <img
-                class="circle_photo"
-                src=".\images\shinchanghoon\circle_photo.jpg"
-              />
-            </div>
+            <div class="articlebox1">
+              <div class="profilephoto">
+                <img
+                  class="circle_photo"
+                  src=".\images\shinchanghoon\circle_photo.jpg"
+                />
+              </div>
 
-            <div class="nameandprofile">
-              <li>Shinchanghoon</li>
-              <li>Frontend Developer</li>
+              <div class="nameandprofile">
+                <li>Shinchanghoon</li>
+                <li>Frontend Developer</li>
+              </div>
             </div>
 
             <div class="centerarticle">
@@ -141,7 +143,117 @@ function Main() {
         </div>
 
         {/* <!--오른쪽 팔로워들--> */}
-        <div class="right" />
+        <div class="right">
+          <div className="rightbox1">
+            <div class="profilephoto">
+              <img
+                class="circle_photo"
+                src=".\images\shinchanghoon\circle_photo.jpg"
+              />
+            </div>
+
+            <div class="nameandprofile">
+              <li>Shinchanghoon</li>
+              <li>Frontend Developer</li>
+            </div>
+          </div>
+
+          <div className="rightbox2">
+            <div className="story">스토리 모두보기</div>
+            <div className="followers">
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage1.jpg"
+                />
+                {'user1 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage2.jpg"
+                />
+                user2
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage3.jpg"
+                />
+                {'user3 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage4.jpg"
+                />
+                {'  user4'}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage5.jpg"
+                />
+                {'user5 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage6.jpg"
+                />
+                {'  user6 '}
+              </div>
+            </div>
+          </div>
+
+          <div className="rightbox3">
+            <div className="story">스토리 모두보기</div>
+            <div className="followers">
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage1.jpg"
+                />
+                {'user1 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage2.jpg"
+                />
+                user2
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage3.jpg"
+                />
+                {'user3 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage4.jpg"
+                />
+                {'  user4'}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage5.jpg"
+                />
+                {'user5 '}
+              </div>
+              <div className="follower">
+                <img
+                  class="circleIamge"
+                  src=".\images\shinchanghoon\rightimage6.jpg"
+                />
+                {'  user6 '}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
