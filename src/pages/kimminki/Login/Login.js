@@ -6,31 +6,17 @@ import '../Login/Login.scss';
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [pass, setPassword] = useState('');
-  const [color, setColor] = useState('rgba(0, 0, 255, 0.5)');
-  const [button, setButton] = useState(true);
 
   const saveUserId = event => {
     setId(event.target.value);
-    buttonDisabled();
-    buttonColor();
   };
   const savePassword = event => {
     setPassword(event.target.value);
-    buttonDisabled();
-    buttonColor();
   };
 
   const Navigate = useNavigate();
+  const buttonChange = id.includes('@') && pass.length > 5 ? false : true;
 
-  const buttonDisabled = () => {
-    id.includes('@') && pass.length > 5 ? setButton(false) : setButton(true);
-  };
-
-  const buttonColor = () => {
-    id.includes('@') && pass.length > 5
-      ? setColor('skyblue')
-      : setColor('rgba(0, 0, 255, 0.5)');
-  };
   const goToMain = () => {
     Navigate('/mainminki');
   };
@@ -54,9 +40,9 @@ const LoginPage = () => {
             onChange={savePassword}
           />
           <button
-            style={{ backgroundColor: color }}
+            className="loginBtn"
             onClick={goToMain}
-            disabled={button}
+            disabled={buttonChange}
           >
             로그인
           </button>
