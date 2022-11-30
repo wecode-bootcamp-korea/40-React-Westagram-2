@@ -87,7 +87,7 @@ function Login() {
               <button className="buttonBox" onKeyUp={changeColor}>로그인</button>
             </Link> */}
           {/* useNavigate hook 기능 구현 */}
-          <button disabled={buttonBox} onClick={main}>
+          <button className="loginBtn" disabled={buttonBox} onClick={main}>
             로그인
           </button>
           <div className="forgetPassword">비밀번호를 잊으셨나요?</div>

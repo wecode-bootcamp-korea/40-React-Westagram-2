@@ -29,9 +29,18 @@ function Main() {
 
   const submitBox = !(comment.length > 0);
 
-  const addComment = () => {
-    comment;
+  const addComment = event => {
+    if (comment === '') {
+      return;
+    }
+    // const concatResult = arrayComment.concat([comment]);
+    setArrayComment(concatResult => [...concatResult, comment]);
+    setComment('');
   };
+
+  const pushComment = arrayComment.map(comment => {});
+  // arr.map(callback(currentValue[, index[, array]])[, thisArg])
+
   return (
     <div className="Main">
       <div class="wrap">
@@ -135,15 +144,31 @@ function Main() {
                 </div>
               </div>
               <div className="article5">
-                <input
-                  id="commentInput"
-                  type="text"
-                  placeholder="댓글 달기..."
-                  value={comment}
-                  onChange={saveComment}
-                />
-                {/* id="submit" */}
-                <buttotn disabled={submitBox}>게시</buttotn>
+                <ul>
+                  {arrayComment.map((value, index) => (
+                    <li key={index}>
+                      <span className="commentId">jaewon_123</span>
+                      {value}
+                    </li>
+                  ))}
+                </ul>
+                <form className="mainComment" onSubmit={addComment}>
+                  <input
+                    id="commentInput"
+                    type="text"
+                    placeholder="댓글 달기..."
+                    value={comment}
+                    onChange={saveComment}
+                  />
+                  {/* id="submit" */}
+                  <button
+                    className="commentBtn"
+                    disabled={submitBox}
+                    onClick={addComment}
+                  >
+                    게시
+                  </button>
+                </form>
               </div>
             </article>
           </div>
