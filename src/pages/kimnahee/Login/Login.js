@@ -28,7 +28,7 @@ const LoginNaHee = () => {
   };
 
   return (
-    <div id="loginBox">
+    <div id="login">
       <h1 className="loginLogo">westagram</h1>
       <input
         className="idBox"

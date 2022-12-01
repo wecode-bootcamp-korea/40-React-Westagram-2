@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Comment from './CommentList';
-import FeedLists from './Feed';
+import Feed from './Feed';
 import Footer from './Footer';
 import './Main.scss';
 
@@ -45,13 +44,26 @@ const Nav = () => {
   );
 };
 
+const FeedLists = () => {
+  const [feedList, setFeedList] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(response => response.json())
+      .then(data => setFeedList(data));
+  }, []);
+
+  const Feeds = feedList.map(feed => <Feed key={feed.id} feed={feed} />);
+  return <div>{Feeds}</div>;
+};
+
 const StoryBox = () => {
   return (
     <div className="main-right">
       <div className="profileBox">
         <div>
           <img
-            alt="profile image"
+            alt="profile"
             className="profileImage"
             src="/images/MainPage/myprofile.png"
           />
@@ -161,6 +173,7 @@ const StoryBox = () => {
           <div>
             <img
               className="userInformation"
+              alt="user"
               src="https://images.unsplash.com/photo-1668635716727-aa176f3204d1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80"
             />
           </div>
@@ -174,6 +187,7 @@ const StoryBox = () => {
           <div>
             <img
               className="userImage"
+              alt="user"
               src="https://images.unsplash.com/photo-1668619834434-a9fb20654726?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=774&amp;q=80"
             />
           </div>
