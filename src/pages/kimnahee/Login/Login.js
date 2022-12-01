@@ -36,6 +36,7 @@ const LoginNaHee = () => {
         placeholder="전화번호, 사용자 이름 또는 이메일"
         onKeyUp={valid}
         onChange={saveUserId}
+        value={idValue}
       />
       <input
         className="pwdBox"
@@ -43,6 +44,7 @@ const LoginNaHee = () => {
         type="password"
         onKeyUp={valid}
         onChange={saveUserPwd}
+        value={pwdValue}
       />
       <button
         className={active ? 'loginBtn' : 'loginBtnActive'}

@@ -7,7 +7,7 @@ const Comment = ({ commentArray, removeComment }) => {
       <span className="userComment">{commentArray.userContent}</span>
       <input
         type="button"
-        value="x"
+        value="✕"
         onClick={() => removeComment(commentArray.id)}
         className="deleteButton"
       />

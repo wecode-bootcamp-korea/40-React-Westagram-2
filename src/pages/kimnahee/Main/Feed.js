@@ -54,7 +54,7 @@ const Feed = ({ feed }) => {
               <img
                 className="feedUserImage"
                 alt="feedUserImage"
-                src="/images/MainPage/myprofile.png"
+                src={feed.profileImgUrl}
               />
             </div>
             <div className="feedUserName">{feed.name}</div>
