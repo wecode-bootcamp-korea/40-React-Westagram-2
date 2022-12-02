@@ -1,0 +1,63 @@
+$primary-border: 1px solid #dbdbdb;
+$primary-font: 'Lobster', cursive;
+
+@mixin flexSort($justify) {
+  display: flex;
+  justify-content: $justify;
+}
+
+@mixin flexalign {
+  display: flex;
+  align-items: center;
+}
+
+#login {
+  width: 550px;
+  border: $primary-border;
+  margin: 10% auto;
+  @include flexalign;
+  flex-direction: column;
+
+  h1 {
+    font-family: $primary-font;
+    font-size: 70px;
+    margin: 75px;
+  }
+
+  input {
+    width: 400px;
+    height: 65px;
+    margin: 8px;
+    font-size: 15px;
+    padding: 8px;
+    border: $primary-border;
+    border-radius: 5px;
+    background-color: #fafafa;
+  }
+
+  button {
+    width: 400px;
+    height: 55px;
+    margin: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #c0dffd;
+    color: white;
+    font-weight: bold;
+
+    &.loginBtnActive {
+      background-color: #1877f2;
+    }
+  }
+
+  div {
+    margin-top: 120px;
+    margin-bottom: 35px;
+    a {
+      text-decoration: none;
+      color: rgb(44, 75, 118);
+      font-size: 20px;
+    }
+  }
+}
