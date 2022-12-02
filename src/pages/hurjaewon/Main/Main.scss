@@ -1,0 +1,375 @@
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1830px;
+  height: 100px;
+  background-color: #ffff;
+
+  .navLeft {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 100px;
+
+    .westagramNavIcon {
+      margin-left: 20px;
+    }
+
+    .westagramSmallLogo {
+      margin-left: 60px;
+    }
+  }
+
+  .searchBox {
+    border-radius: 5px;
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+    background-position: 13px center;
+    background-size: contain;
+
+    &:focus {
+      width: 50%;
+      background-image: none;
+      background-position: -10px center;
+      text-indent: 0;
+    }
+  }
+
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 100px;
+
+    .westagramNavExplore {
+      padding-left: 40px;
+    }
+
+    .westagramNavLineHeart {
+      padding-left: 40px;
+    }
+
+    .westagramNavProfile {
+      padding-left: 40px;
+    }
+  }
+}
+
+main {
+  width: 1830px;
+  height: 3000px;
+  border: 1px solid #e6e6e6;
+  background-color: #fafafa;
+
+  .feeds {
+    width: 840px;
+    height: 1300px;
+    margin-left: 130px;
+
+    article {
+      width: 820px;
+      margin-top: 80px;
+      margin-right: 10px;
+      margin-left: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #ffff;
+
+      .article1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+
+        .article1Left {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          .accountIcon {
+            margin-left: 20px;
+          }
+
+          .accountName {
+            margin-left: 20px;
+            font-size: 23px;
+            font-weight: 500;
+          }
+        }
+        .moreIcon {
+          margin-right: 20px;
+        }
+      }
+
+      .article3 {
+        .article31 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 10px;
+
+          .article31Left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+
+            .message {
+              margin-left: 20px;
+            }
+
+            .share {
+              margin-left: 20px;
+            }
+          }
+          .mark {
+            margin-right: 20px;
+          }
+        }
+
+        .article32 {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          margin-left: 20px;
+
+          .textLike {
+            display: flex;
+            margin-left: 12px;
+            font-size: 22px;
+
+            .textLike1,
+            .textLike3 {
+              font-weight: 600;
+            }
+
+            .textLike3 {
+              margin-left: 6px;
+            }
+            .textLike2,
+            .textLike4 {
+              margin-left: 3px;
+              color: gray;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .article33 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 10px;
+          padding-left: 0;
+          font-size: 20px;
+
+          .article33Left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+
+            .otherAccountname {
+              font-size: 20px;
+              font-weight: 600;
+            }
+
+            .comment1 {
+              margin-left: 7px;
+              font-size: 19px;
+              font-weight: 400;
+            }
+          }
+
+          .delete {
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .time {
+        margin-left: 20px;
+        color: gray;
+      }
+
+      .article5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px solid #ccc;
+        border-radius: 3px;
+        // color: gray;
+        font-size: 18px;
+
+        .arrayCommentMap {
+          float: left;
+          li {
+            margin-top: 5px;
+          }
+        }
+        .commentId {
+          margin-right: 10px;
+          font-weight: bold;
+        }
+
+        #commentInput {
+          width: 700px;
+          height: 30px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+.commentBtn {
+  width: 50px;
+  height: 30px;
+  margin-left: 30px;
+  border: none;
+  border-radius: 3px;
+  color: #abd7ff;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #c5e1fa;
+  }
+}
+
+.main-right {
+  .right1 {
+    .accountRight {
+      position: absolute;
+      top: 220px;
+      right: 770px;
+    }
+
+    .topHighText {
+      position: absolute;
+      top: 225px;
+      right: 590px;
+
+      .rightAccountText {
+        font-size: 19px;
+        font-weight: 700;
+      }
+
+      .rightSmallAccountText {
+        margin-top: 3px;
+        color: gray;
+        font-size: 19px;
+      }
+    }
+  }
+
+  .right2 {
+    .rightBox {
+      position: absolute;
+      top: 220px;
+      right: 440px;
+      width: 390px;
+      height: 240px;
+      margin-top: 80px;
+      margin-right: 10px;
+      margin-left: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #ffff;
+
+      .highText {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 18px;
+
+        .textStory {
+          color: gray;
+        }
+      }
+
+      .rightAccountImage {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-left: 20px;
+
+        .account1 {
+          position: absolute;
+          top: 60px;
+          left: 20px;
+        }
+
+        .account2 {
+          position: absolute;
+          top: 120px;
+          left: 20px;
+        }
+
+        .account3 {
+          position: absolute;
+          top: 180px;
+          left: 20px;
+        }
+      }
+
+      .rightAccountText {
+        .accountMainId1 {
+          display: flex;
+          position: absolute;
+          top: 60px;
+          left: 80px;
+          flex-direction: column;
+
+          .accountId1 {
+            font-weight: 700;
+          }
+
+          .accountId11 {
+            color: gray;
+          }
+        }
+
+        .accountMainId2 {
+          display: flex;
+          position: absolute;
+          top: 120px;
+          left: 80px;
+          flex-direction: column;
+
+          .accountId2 {
+            font-weight: 700;
+          }
+
+          .accountId21 {
+            color: gray;
+          }
+        }
+
+        .accountMainId3 {
+          display: flex;
+          position: absolute;
+          top: 180px;
+          left: 80px;
+          flex-direction: column;
+
+          .accountId3 {
+            font-weight: 700;
+          }
+
+          .accountId31 {
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}
