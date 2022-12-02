@@ -18,6 +18,7 @@ import account1 from '../../../assets/hurjaewon/small_account.png';
 import account2 from '../../../assets/hurjaewon/small_account.png';
 import account3 from '../../../assets/hurjaewon/small_account.png';
 import { useState } from 'react';
+import ComponentChild from '../component';
 
 function Main() {
   const [comment, setComment] = useState('');
@@ -34,16 +35,27 @@ function Main() {
       return;
     }
     // const concatResult = arrayComment.concat([comment]);
-    setArrayComment(concatResult => [...concatResult, comment]);
+    setArrayComment(concatResult => [...concatResult, { comment: comment }]);
     setComment('');
   };
+  console.log(arrayComment);
 
-  const pushComment = arrayComment.map(comment => {});
+  const componentParent = arrayComment => {
+    arrayComment.map((value, index) => {
+      return (
+        <li key={index}>
+          <span className="commentId">jaewon_123</span>
+          {value}
+        </li>
+      );
+    });
+  };
+  // const pushComment = arrayComment.map(comment => {});
   // arr.map(callback(currentValue[, index[, array]])[, thisArg])
 
   return (
     <div className="Main">
-      <div class="wrap">
+      <div className="wrap">
         <nav className="mainNav">
           <div className="navLeft">
             <img
@@ -126,7 +138,7 @@ function Main() {
                   <div className="textLike">
                     <span className="textLike1">jaewon_123</span>
                     <span className="textLike2">님</span>
-                    <sapn className="textLike3">외 11명</sapn>
+                    <span className="textLike3">외 11명</span>
                     <span className="textLike4">이 좋아합니다</span>
                   </div>
                 </div>
@@ -144,14 +156,23 @@ function Main() {
                 </div>
               </div>
               <div className="article5">
-                <ul>
+                <ComponentChild arrayComment={arrayComment} />
+                {/* <ul className="arrayCommentMap">
                   {arrayComment.map((value, index) => (
                     <li key={index}>
                       <span className="commentId">jaewon_123</span>
                       {value}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
+                {/* <ul>
+                  {arrayComment.map((value, index) => (
+                    <li key={index}>
+                      <span className="commentId">jaewon_123</span>
+                      {value}
+                    </li>
+                  ))}
+                </ul> */}
                 <form className="mainComment" onSubmit={addComment}>
                   <input
                     id="commentInput"
@@ -173,7 +194,7 @@ function Main() {
             </article>
           </div>
           <div className="main-right">
-            <div class="right1">
+            <div className="right1">
               <img
                 className="accountRight"
                 src={accountRight}
